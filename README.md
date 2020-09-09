@@ -1,0 +1,2 @@
+# SeamCarving
+SeamCarving in Java.
