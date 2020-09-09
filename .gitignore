@@ -1,0 +1,16 @@
+# Eclipse
+.metadata/
+.recommenders/
+.checkstyle
+.classpath
+.project
+.settings
+bin/
+target/
+
+# IntelliJ IDE
+.idea/*
+*.iws
+*.iml
+*.eml
+/out/
