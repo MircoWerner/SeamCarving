@@ -18,13 +18,10 @@ public class Main {
 
     private static void cutPath(BufferedImage image, String out) throws IOException {
         int[][] luminanceValues = Luminance.luminanceValues(image);
-        for (int x = 0; x < image.getWidth(); x++) {
-            for (int y = 0; y < image.getHeight(); y++) {
-                int luminanceValue = luminanceValues[x][y];
-                luminanceValues[x][y] = new Color(luminanceValue, luminanceValue, luminanceValue).getRGB();
-            }
-        }
+        float[][] gradientValues = Gradients.gradientValues(luminanceValues, image.getWidth(), image.getHeight());
+
         ImageUtils.save(ImageUtils.toBufferedImage(luminanceValues, image.getWidth(), image.getHeight()), "png", "luminance_" + out);
+        ImageUtils.save(ImageUtils.toBufferedImage(gradientValues, image.getWidth(), image.getHeight()), "png", "gradient_" + out);
 
         int[] path = new CutPath(image).calculateCutPath();
 

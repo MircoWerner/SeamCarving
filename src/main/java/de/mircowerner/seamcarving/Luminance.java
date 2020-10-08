@@ -9,6 +9,7 @@ public final class Luminance {
     }
 
     public static int[][] luminanceValues(BufferedImage image) {
+        System.out.println(image.getWidth() + " " + image.getHeight());
         int[][] luminanceValues = new int[image.getWidth()][image.getHeight()];
         for (int x = 0; x < image.getWidth(); x++) {
             for (int y = 0; y < image.getHeight(); y++) {
