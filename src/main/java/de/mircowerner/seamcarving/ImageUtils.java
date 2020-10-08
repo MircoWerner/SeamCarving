@@ -36,4 +36,18 @@ public final class ImageUtils {
     public static void save(BufferedImage image, String type, String file) throws IOException {
         ImageIO.write(image, type, new File(file));
     }
+
+    public static BufferedImage cutOutPath(BufferedImage image, int[] path) {
+        BufferedImage newImage = new BufferedImage(image.getWidth() - 1, image.getHeight(), BufferedImage.TYPE_INT_ARGB);
+        for (int x = 0; x < image.getWidth(); x++) {
+            for (int y = 0; y < image.getHeight(); y++) {
+                if (x < path[y]) {
+                    newImage.setRGB(x, y, image.getRGB(x, y));
+                } else if (x > path[y]) {
+                    newImage.setRGB(x - 1, y, image.getRGB(x, y));
+                }
+            }
+        }
+        return newImage;
+    }
 }

@@ -1,31 +1,11 @@
 package de.mircowerner.seamcarving;
 
-import java.awt.Color;
-import java.awt.image.BufferedImage;
-
-public class CutPath {
-    private final int width;
-    private final int height;
-    private final float[][] energy;
-
-    public CutPath(BufferedImage image) {
-        this.width = image.getWidth();
-        this.height = image.getHeight();
-        this.energy = new float[width][height];
-        for (int x = 0; x < width; x++) {
-            for (int y = 0; y < height; y++) {
-                this.energy[x][y] = getEnergy(image.getRGB(x, y));
-            }
-        }
+public final class CutPath {
+    private CutPath() throws IllegalAccessException {
+        throw new IllegalAccessException("Utility class constructor");
     }
 
-    protected float getEnergy(int rgba) {
-        Color color = new Color(rgba, true);
-        // Calculate the optical brightness of a color. Works pretty well. 0 = black, 1 = white.
-        return ((int) Math.sqrt(color.getRed() * color.getRed() * 0.241f + color.getGreen() * color.getGreen() * 0.691f + color.getBlue() * color.getBlue() * 0.068f)) / 255f;
-    }
-
-    public int[] calculateCutPath() {
+    public static float[][] getPathMatrix(float[][] energy, int width, int height) {
         float[][] matrix = new float[width][height];
 
         // init
@@ -51,6 +31,10 @@ public class CutPath {
             }
         }
 
+        return matrix;
+    }
+
+    public static int[] pathMatrixToOptimalPath(float[][] matrix, float[][] energy, int width, int height) {
         // Find the pixel with the lowest sum of energies at the bottom. That is the end pixel of the optimal path.
         int xPos = 0;
         for (int x = 1; x < width; x++) {
