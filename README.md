@@ -20,20 +20,21 @@ For more information on the algorithm watch the lecture or see the wikipedia pag
 
 # Results
 ### Input
-![The_Persistence_of_Memory.jpg](The_Persistence_of_Memory.jpg)<br>
+![The_Persistence_of_Memory](https://user-images.githubusercontent.com/34870366/214943065-8a2c0bdc-381c-42bd-9fd6-3a7a98547c8a.jpg)
+<br>
 https://en.wikipedia.org/wiki/File:The_Persistence_of_Memory.jpg
 ### 1st iteration
 Luminance:<br>
-![luminance_1.png](target%2Fout%2Fluminance%2Fluminance_1.png)
+![luminance_1](https://user-images.githubusercontent.com/34870366/214942927-c196e62a-e19f-4b96-b698-0aa85a5eaa39.png)
 <br>
 Gradient:<br>
-![gradient_1.png](target%2Fout%2Fgradient%2Fgradient_1.png)
+![gradient_1](https://user-images.githubusercontent.com/34870366/214942885-e5c41acd-9123-4626-9a07-188525e37494.png)
 <br>
 Path with lowest energy:<br>
-![cut_path_1.png](target%2Fout%2Fcut_path%2Fcut_path_1.png)
+![cut_path_1](https://user-images.githubusercontent.com/34870366/214942856-3f8b9ff6-f6d9-4589-8662-8208f5803237.png)
 <br>
 Output:<br>
-![output_1.png](target%2Fout%2Foutput%2Foutput_1.png)
+![output_1](https://user-images.githubusercontent.com/34870366/214942801-b25724ed-c50d-4e32-befd-46cc7060b339.png)
 ### 64th iteration
 Output: *notice that the relevant objects in the image were left almost unchanged*<br>
-![output_64.png](target%2Fout%2Foutput%2Foutput_64.png)
+![output_64](https://user-images.githubusercontent.com/34870366/214942829-6c05c7f3-b800-4099-a7c8-14681d7dea25.png)
