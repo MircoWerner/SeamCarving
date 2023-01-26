@@ -35,20 +35,6 @@ public final class Gradients {
         largerArray[width + 1][0] = luminanceValues[width - 1][0];
         largerArray[0][height + 1] = luminanceValues[0][height - 1];
         largerArray[width + 1][height + 1] = luminanceValues[width - 1][height - 1];
-
-        /*try {
-            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("C:\\Users\\mirco\\Desktop\\SeamCarving\\luminance_values.txt", false));
-            for (int y = 0; y < height + 2; y++) {
-                for (int x = 0; x < width + 2; x++) {
-                    bufferedWriter.write(largerArray[x][y] + " ");
-                }
-                bufferedWriter.newLine();
-            }
-            bufferedWriter.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
-
         return largerArray;
     }
 
